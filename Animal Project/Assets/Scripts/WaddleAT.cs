@@ -23,7 +23,6 @@ namespace NodeCanvas.Tasks.Actions {
 
 
 
-
         //Use for initialization. This is called only once in the lifetime of the task.
         //Return null if init was successfull. Return an error string otherwise
         protected override string OnInit() {
@@ -43,7 +42,6 @@ namespace NodeCanvas.Tasks.Actions {
 
 
             animator.CrossFade("Waddle", 0);
-
             EndAction(true);
 
 

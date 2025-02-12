@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4675257297227971108}
   - component: {fileID: 2860012350332098325}
   - component: {fileID: 3180745035691789115}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BreadCrumbs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
