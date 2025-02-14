@@ -356,7 +356,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.4, y: -1, z: -8.5}
-  m_LocalScale: {x: 315.57117, y: 2, z: 272.5749}
+  m_LocalScale: {x: 526.8776, y: 2, z: 503.19727}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -793,11 +793,11 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
-  far clip plane: 1000
-  field of view: 60
+  near clip plane: 0.1
+  far clip plane: 5000
+  field of view: 40
   orthographic: 0
-  orthographic size: 5
+  orthographic size: 10
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -821,13 +821,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalRotation: {x: 0.017817905, y: 0.9789183, z: -0.17846352, w: 0.09773584}
+  m_LocalPosition: {x: -9.6, y: 20.8, z: 47.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 20.664, y: 168.597, z: 0}
 --- !u!1 &1336698651
 GameObject:
   m_ObjectHideFlags: 0
@@ -1157,7 +1157,7 @@ Transform:
   m_GameObject: {fileID: 3176319553576218645}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.006, y: 0.029, z: 0.477}
+  m_LocalPosition: {x: 0.005999999, y: 0.029000051, z: 0.47700003}
   m_LocalScale: {x: 0.52505, y: 0.08765588, z: 0.4608}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1311,7 +1311,7 @@ Transform:
   m_GameObject: {fileID: 3368771762270078356}
   serializedVersion: 2
   m_LocalRotation: {x: 0.13067439, y: 0.0000000013969839, z: 0.000000007450581, w: 0.99142534}
-  m_LocalPosition: {x: 0.006, y: -0.081, z: 0.471}
+  m_LocalPosition: {x: 0.005999999, y: -0.08100002, z: 0.47099993}
   m_LocalScale: {x: 0.52505, y: 0.08765588, z: 0.4608}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1787,16 +1787,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _serializedExposedParameters: []
   _boundGraphSerialization: '{"type":"NodeCanvas.StateMachines.FSM","nodes":[{"_actionList":{"executionMode":1,"actions":[{"$type":"NodeCanvas.Tasks.Actions.IdleAT"}]},"_color":{"r":1.0,"g":0.42,"b":0.32,"a":1.0},"_name":"Idle","_position":{"x":528.0,"y":405.0},"$type":"NodeCanvas.StateMachines.ActionState","$id":"0"},{"_nestedFSM":{"_value":1},"_name":"Waddle
-    / Wander","_position":{"x":368.0,"y":681.0},"$type":"NodeCanvas.StateMachines.NestedFSMState","$id":"1"},{"_nestedFSM":{"_value":2},"_name":"Hungry","_position":{"x":783.0,"y":463.0},"$type":"NodeCanvas.StateMachines.NestedFSMState","$id":"2"},{"_actionList":{"executionMode":1,"actions":[{"$type":"NodeCanvas.Tasks.Actions.SleepAT"}]},"_color":{"r":1.0,"g":0.42,"b":0.32,"a":1.0},"_name":"Sleep","_position":{"x":698.0,"y":188.0},"$type":"NodeCanvas.StateMachines.ActionState","$id":"3"}],"connections":[{"_condition":{"timer":1.0,"$type":"NodeCanvas.Tasks.Conditions.WaitForCT"},"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"1"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_condition":{"energyThreshold":19.0,"$type":"NodeCanvas.Tasks.Conditions.CheckEnergyCT"},"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"2"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_condition":{"timer":5.0,"$type":"NodeCanvas.Tasks.Conditions.WaitForCT"},"_sourceNode":{"$ref":"1"},"_targetNode":{"$ref":"0"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"0"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_condition":{"timer":6.0,"$type":"NodeCanvas.Tasks.Conditions.WaitForCT"},"_sourceNode":{"$ref":"3"},"_targetNode":{"$ref":"0"},"$type":"NodeCanvas.StateMachines.FSMConnection"}],"canvasGroups":[],"localBlackboard":{"_variables":{}}}'
+    / Wander","_position":{"x":368.0,"y":681.0},"$type":"NodeCanvas.StateMachines.NestedFSMState","$id":"1"},{"_nestedFSM":{"_value":2},"_name":"Hungry","_position":{"x":783.0,"y":463.0},"$type":"NodeCanvas.StateMachines.NestedFSMState","$id":"2"},{"_actionList":{"executionMode":1,"actions":[{"$type":"NodeCanvas.Tasks.Actions.SleepAT"}]},"_color":{"r":1.0,"g":0.42,"b":0.32,"a":1.0},"_name":"Sleep","_position":{"x":698.0,"y":188.0},"$type":"NodeCanvas.StateMachines.ActionState","$id":"3"},{"_position":{"x":222.0,"y":227.0},"$type":"NodeCanvas.StateMachines.AnyState","$id":"4"},{"_actionList":{"executionMode":1,"actions":[{"quackSound":3,"$type":"NodeCanvas.Tasks.Actions.QuackAT"}]},"_color":{"r":1.0,"g":0.42,"b":0.32,"a":1.0},"_name":"Quack","_position":{"x":233.0,"y":346.0},"$type":"NodeCanvas.StateMachines.ActionState","$id":"5"}],"connections":[{"_condition":{"timer":1.0,"$type":"NodeCanvas.Tasks.Conditions.WaitForCT"},"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"1"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_condition":{"energyThreshold":19.0,"$type":"NodeCanvas.Tasks.Conditions.CheckEnergyCT"},"_sourceNode":{"$ref":"0"},"_targetNode":{"$ref":"2"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_condition":{"timer":5.0,"$type":"NodeCanvas.Tasks.Conditions.WaitForCT"},"_sourceNode":{"$ref":"1"},"_targetNode":{"$ref":"0"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_sourceNode":{"$ref":"2"},"_targetNode":{"$ref":"0"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_condition":{"timer":6.0,"$type":"NodeCanvas.Tasks.Conditions.WaitForCT"},"_sourceNode":{"$ref":"3"},"_targetNode":{"$ref":"0"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_condition":{"inputValue":[32],"$type":"NodeCanvas.Tasks.Conditions.InputCT"},"_sourceNode":{"$ref":"4"},"_targetNode":{"$ref":"5"},"$type":"NodeCanvas.StateMachines.FSMConnection"},{"_sourceNode":{"$ref":"5"},"_targetNode":{"$ref":"0"},"$type":"NodeCanvas.StateMachines.FSMConnection"}],"canvasGroups":[],"localBlackboard":{"_variables":{}}}'
   _boundGraphObjectReferences:
   - {fileID: 0}
   - {fileID: 11400000, guid: df7c24f65bab14243b0499ed58806dac, type: 2}
   - {fileID: 11400000, guid: eaad512e3e8833b4eb0fd5efe1ea5f2b, type: 2}
+  - {fileID: 8300000, guid: 34afedb0f36794a49b29151bc105ec84, type: 3}
   _boundGraphSource:
     _version: 3.31
     _category: 
     _comments: 
-    _translation: {x: -327, y: 37}
+    _translation: {x: -142, y: 170}
     _zoomFactor: 1
   _firstActivation: 0
   _enableAction: 0
