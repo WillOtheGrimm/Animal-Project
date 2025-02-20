@@ -25,7 +25,7 @@ public class SpawnBread : MonoBehaviour
     }
 
 
-
+    //this method is to spawn food at a random location.
     public void SpawnFood ()
     {
         float randomX = Random.Range(-randomRange, randomRange);
@@ -35,7 +35,7 @@ public class SpawnBread : MonoBehaviour
 
 
 
-
+        //Instantiate the bread prefab
         Instantiate(breadPrefab, randomLocation, Quaternion.identity);
 
     }

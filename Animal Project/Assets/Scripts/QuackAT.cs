@@ -9,15 +9,17 @@ namespace NodeCanvas.Tasks.Actions {
 
 
 
-
+		//For audio
         private AudioSource audioSource;
         public AudioClip quackSound;
-
+		//for the animator
         private Animator animator;
 
         //Use for initialization. This is called only once in the lifetime of the task.
         //Return null if init was successfull. Return an error string otherwise
         protected override string OnInit() {
+            //get reference to component
+
             audioSource = agent.GetComponent<AudioSource>();
             animator = agent.GetComponent<Animator>();
 
@@ -31,8 +33,9 @@ namespace NodeCanvas.Tasks.Actions {
 		//Call EndAction() to mark the action as finished, either in success or failure.
 		//EndAction can be called from anywhere.
 		protected override void OnExecute() {
-
+			//play animation instantly
             animator.CrossFade("Quack", 0);
+			//play quack sound
             audioSource.PlayOneShot(quackSound);
 
 

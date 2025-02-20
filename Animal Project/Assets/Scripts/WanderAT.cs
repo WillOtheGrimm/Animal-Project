@@ -19,7 +19,7 @@ namespace NodeCanvas.Tasks.Actions {
 
 
 
-
+        //to set the energy rate
         public float energyRate;
 
 
@@ -29,6 +29,7 @@ namespace NodeCanvas.Tasks.Actions {
         //Return null if init was successfull. Return an error string otherwise
         protected override string OnInit()
         {
+            //get component reference
             agentBlackBoard = agent.GetComponent<Blackboard>();
 
             navMeshAgent = agent.GetComponent<NavMeshAgent>();
@@ -42,10 +43,10 @@ namespace NodeCanvas.Tasks.Actions {
         //EndAction can be called from anywhere.
         protected override void OnExecute()
         {
-
+            //find random point in radius
             randomDirection = Random.insideUnitSphere * walkRadius;
 
-
+            //random location is set around the player
             randomDirection += agent.transform.position;
             NavMeshHit hit;
             NavMesh.SamplePosition(randomDirection, out hit, walkRadius, 1);
@@ -61,15 +62,19 @@ namespace NodeCanvas.Tasks.Actions {
         protected override void OnUpdate()
         {
 
+            //set the energy level to the the blackboard variable
+            float energyLevel =  agentBlackBoard.GetVariableValue<float>("energy");
 
-          float energyLevel =  agentBlackBoard.GetVariableValue<float>("energy");
 
+
+            //energy goes down over time during this task
             energyLevel -= energyRate * Time.deltaTime;
+            //update the blackboard variable to the last value
             agentBlackBoard.SetVariableValue("energy", energyLevel);
 
 
 
-
+            //If duck reach destination, end task
             if (Vector3.Distance(agent.transform.position, finalPosition) <= 0.5f)
             {
 

@@ -11,16 +11,19 @@ namespace NodeCanvas.Tasks.Actions {
         //Return null if init was successfull. Return an error string otherwise
         private Animator animator;
 
-
-
+        //for the time that the animation take (6 sec)
+        float animationTimer = 6f;
+        private float resetTimer;
 
 
         //Use for initialization. This is called only once in the lifetime of the task.
         //Return null if init was successfull. Return an error string otherwise
         protected override string OnInit()
         {
-
+            //get component reference
             animator = agent.GetComponent<Animator>();
+            //reset time when it start
+            resetTimer = animationTimer;
 
 
 
@@ -44,6 +47,13 @@ namespace NodeCanvas.Tasks.Actions {
         protected override void OnUpdate()
         {
 
+            //Timer goes down, 
+            resetTimer -= Time.deltaTime;
+
+            if (resetTimer <= 0)
+            {
+                EndAction(true);
+            }
         }
 
         //Called when the task is disabled.

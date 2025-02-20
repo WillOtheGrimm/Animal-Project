@@ -10,18 +10,20 @@ namespace NodeCanvas.Tasks.Actions {
 
 
 
-
+		//to get the bbparameter
         public BBParameter<Transform> foodTransform;
-
-
-        public float animationTimer;
-        private float resetTimer;
-
-
 		public BBParameter<float> energy;
 
 
 
+		//to get the animation 
+        public float animationTimer;
+        private float resetTimer;
+
+
+
+
+		//For the play sound
         private AudioSource audioSource;
 		public AudioClip eatingSound;
 
@@ -29,8 +31,9 @@ namespace NodeCanvas.Tasks.Actions {
         //Use for initialization. This is called only once in the lifetime of the task.
         //Return null if init was successfull. Return an error string otherwise
         protected override string OnInit() {
+            //get reference to component
 
-			audioSource = agent.GetComponent<AudioSource>();
+            audioSource = agent.GetComponent<AudioSource>();
 
 
 			return null;
@@ -42,37 +45,21 @@ namespace NodeCanvas.Tasks.Actions {
 		protected override void OnExecute() {
 
 
-			//play animation here ****************************************************
+	
 
 			resetTimer = animationTimer;
 
-
-
-
-
-
-			
-
-
-
-
-
-			/*if (foodTransform.value ==)
-			{
-				Debug.Log("Food has been eaten");
-			}*/
-			//EndAction(true);
 		}
 
 		//Called once per frame while the action is active.
 		protected override void OnUpdate() {
 
             resetTimer -= Time.deltaTime;
-
+			//to play the sound and then move on to the next task (time based)
 			if (resetTimer <= 0)
 			{
 				audioSource.PlayOneShot(eatingSound);
-				
+				//Destroy the food object the duck is nearest to
                 GameObject.Destroy(foodTransform.value.gameObject);
 				energy.value += 10;
 				EndAction(true);

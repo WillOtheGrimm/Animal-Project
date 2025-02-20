@@ -8,7 +8,7 @@ namespace NodeCanvas.Tasks.Conditions {
 	public class WaitForCT : ConditionTask {
 
 
-
+		//to make my own timer Conditional task
 		public float timer;
 		private float resetTimer;
 
@@ -34,6 +34,9 @@ namespace NodeCanvas.Tasks.Conditions {
 		//Return whether the condition is success or failure.
 		protected override bool OnCheck() {
 
+
+
+			// Timer goes down then ends the CT
 			resetTimer -= Time.deltaTime;
 
 			if (resetTimer <= 0)

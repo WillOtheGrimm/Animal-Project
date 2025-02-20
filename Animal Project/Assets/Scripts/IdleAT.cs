@@ -15,8 +15,9 @@ namespace NodeCanvas.Tasks.Actions {
 		//Use for initialization. This is called only once in the lifetime of the task.
 		//Return null if init was successfull. Return an error string otherwise
 		protected override string OnInit() {
+            //get reference to component
 
-			animator = agent.GetComponent<Animator>();
+            animator = agent.GetComponent<Animator>();
 
 
 
@@ -32,7 +33,6 @@ namespace NodeCanvas.Tasks.Actions {
 			//Triggers this animation instantly
 			animator.CrossFade("Idle", 0);
 			
-			//EndAction(true);
 		}
 
 		//Called once per frame while the action is active.

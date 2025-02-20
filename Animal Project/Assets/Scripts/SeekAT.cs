@@ -14,10 +14,11 @@ namespace NodeCanvas.Tasks.Actions {
         public Color scanColour;
         public int numberOfScanCirclePoints;
 
+        //for audio
+        private AudioSource audioSource;
+        public AudioClip seekingSound;
 
-
-
-
+        //To detect the food
         public BBParameter<float> detectionRadius;
         public LayerMask foodLayerMask;
         public BBParameter<Transform> foodTransform;
@@ -28,6 +29,8 @@ namespace NodeCanvas.Tasks.Actions {
         protected override string OnInit()
         {
             detectionRadius.value = agent.GetComponent<Blackboard>().GetVariableValue<float>("initialScanRadius");
+            //get reference to component
+            audioSource = agent.GetComponent<AudioSource>();
 
             return null;
         }
@@ -37,20 +40,21 @@ namespace NodeCanvas.Tasks.Actions {
         //EndAction can be called from anywhere.
         protected override void OnExecute()
         {
-
+            //play the angry noise
+            audioSource.PlayOneShot(seekingSound);
         }
 
         //Called once per frame while the action is active.
         protected override void OnUpdate()
         {
+            //run the drawline method to see detection range (for debug)
             DrawCircle(agent.transform.position, detectionRadius.value, scanColour, numberOfScanCirclePoints);
 
-
+            //If something is detected within the sphere, 
             Collider[] detectedColliders = Physics.OverlapSphere(agent.transform.position, detectionRadius.value, foodLayerMask);
 
 
-
-
+            //if food has been detected end the task
             if (detectedColliders.Length > 0)
             {
             foodTransform.value = detectedColliders[0].transform;
@@ -62,7 +66,7 @@ namespace NodeCanvas.Tasks.Actions {
 
           
         }
-
+        //to have a visible circle show the detection range
         private void DrawCircle(Vector3 center, float radius, Color colour, int numberOfPoints)
         {
             Vector3 startPoint, endPoint;

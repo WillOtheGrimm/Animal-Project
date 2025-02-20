@@ -8,7 +8,7 @@ namespace NodeCanvas.Tasks.Actions {
 
 	public class ApproachAT : ActionTask {
 
-
+        //To get the food transform
         public BBParameter<Transform> foodTransform;
 		
 
@@ -21,6 +21,7 @@ namespace NodeCanvas.Tasks.Actions {
         //Use for initialization. This is called only once in the lifetime of the task.
         //Return null if init was successfull. Return an error string otherwise
         protected override string OnInit() {
+            //get reference to component
             navMeshAgent = agent.GetComponent<NavMeshAgent>();
 			return null;
 		}
@@ -30,14 +31,14 @@ namespace NodeCanvas.Tasks.Actions {
 		//EndAction can be called from anywhere.
 		protected override void OnExecute() {
 
-
+            //Set the destination to the food transform
 			navMeshAgent.destination = foodTransform.value.position;
 
 
 
 
 
-
+            //Once food is detected set the food transform to the destination
             NavMeshHit hit;
             NavMesh.SamplePosition(foodTransform.value.position, out hit, 10, 1); 
             finalPosition = hit.position;
@@ -55,10 +56,9 @@ namespace NodeCanvas.Tasks.Actions {
         //Called once per frame while the action is active.
         protected override void OnUpdate() {
 
-
+            //End the action once close to the food
             if (Vector3.Distance(agent.transform.position, foodTransform.value.position) <= 0.5f)
             {
-				Debug.Log("NOM NOM NOM NOM NOM");
                 EndAction(true);
             }
 

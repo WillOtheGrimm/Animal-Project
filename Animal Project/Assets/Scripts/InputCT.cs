@@ -6,7 +6,8 @@ namespace NodeCanvas.Tasks.Conditions {
 
 	public class InputCT : ConditionTask {
 
-		public KeyCode[] inputValue;  //to pick which input we want
+		//to set the desired input
+		public KeyCode[] inputValue;  
 
 
 
@@ -36,9 +37,13 @@ namespace NodeCanvas.Tasks.Conditions {
 
 
 			//Thank you again for this code, I understand the gist of it.
+		
             bool movementInput = false;
+
+			//goes throught the list of possible input
             for (int i = 0; i < inputValue.Length; i++)
             {
+				//check for specific input (the public one)
                 if (Input.GetKeyDown(inputValue[i]))
                 {
                     movementInput = true;

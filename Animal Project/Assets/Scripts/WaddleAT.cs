@@ -9,25 +9,14 @@ namespace NodeCanvas.Tasks.Actions {
 
 
 
-
+	
         private Animator animator;
-
-
-
-
-
-
-
-
-
-
-
 
         //Use for initialization. This is called only once in the lifetime of the task.
         //Return null if init was successfull. Return an error string otherwise
         protected override string OnInit() {
 
-
+			//Get component reference
             animator = agent.GetComponent<Animator>();
 
 
@@ -40,7 +29,7 @@ namespace NodeCanvas.Tasks.Actions {
 		//EndAction can be called from anywhere.
 		protected override void OnExecute() {
 
-
+			//Play animation instantly
             animator.CrossFade("Waddle", 0);
             EndAction(true);
 

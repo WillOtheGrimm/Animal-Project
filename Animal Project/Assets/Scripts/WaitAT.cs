@@ -10,7 +10,7 @@ namespace NodeCanvas.Tasks.Actions {
 
 		public float waitTimer;
 
-
+		//this whole Action task is just to repeat the wander every few seconds
 
 
 
